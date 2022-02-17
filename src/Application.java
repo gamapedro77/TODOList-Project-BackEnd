@@ -12,7 +12,11 @@ public class Application {
         listaDeTarefas.carregarArquivo("TodoList.csv");
 
         boolean endApp = true;
-        System.out.println("COMANDOS: C - Criar nova tarefa, R - Recuperar lista de tarefas, D - Deletar uma tarefa, Quit - Encerrar aplicação");
+        System.out.println("COMANDOS: ");
+        System.out.println(" C - Criar nova tarefa, R - Recuperar lista de tarefas, D - Deletar uma tarefa");
+        System.out.println("RP - Recuperar tarefas por prioridade");
+        System.out.println("RC - Recuperar tarefas por categoria");
+        System.out.println("Quit - Encerrar aplicação");
         while(endApp) {
             Scanner input = new Scanner(System.in);
             String userInput = input.nextLine();
@@ -27,12 +31,18 @@ public class Application {
                 case "D":
                     listaDeTarefas.deletarTarefa();
                     break;
+                case "RP":
+                    listaDeTarefas.recuperarListaPorPrioridade();
+                    break;
+                case "RC":
+                    listaDeTarefas.recuperarListaPorCategoria();
+                    break;
                 case "Quit":
                     endApp = false;
                     listaDeTarefas.escreverTarefas();
                     break;
                 default:
-                    System.out.println("Comando não reconhecido... encerrando aplicação");
+                    System.out.println("Comando não reconhecido...");
                     break;
             }
         }

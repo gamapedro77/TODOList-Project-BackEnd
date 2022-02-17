@@ -30,6 +30,7 @@ public class ListaTarefas {
                 Tarefa tarefa = new Tarefa(nome, descricao, dataDeTermino, prioridade, categoria, status);
                 this.lista.add(tarefa);
             }
+            this.ordenarPorPrioridade();
         } catch (FileNotFoundException e) {
             System.out.println("Nenhum arquivo de lista foi encontrado... Iniciando lista vazia.");
         }
@@ -59,6 +60,7 @@ public class ListaTarefas {
                 status);
 
         this.lista.add(novaTarefa);
+        this.ordenarPorPrioridade();
         System.out.println("Tarefa criada com sucesso");
     }
 
@@ -73,6 +75,12 @@ public class ListaTarefas {
         }
     }
 
+    public void ordenarPorPrioridade() {
+        lista.sort((t1, t2) -> {
+            return Integer.compare(t1.getPrioridade(), t2.getPrioridade());
+        });
+    }
+
     public void deletarTarefa() {
         Scanner input = new Scanner(System.in);
 
@@ -80,8 +88,14 @@ public class ListaTarefas {
 
         String nomeDeletar = input.nextLine();
         Tarefa tarefaDeletar = getTarefa(nomeDeletar);
-        this.lista.remove(tarefaDeletar);
-        System.out.println("Tarefa removida com sucesso");
+        if(tarefaDeletar == null) {
+            System.out.println("Tarefa não encontrada");
+        }
+        else {
+            this.lista.remove(tarefaDeletar);
+            System.out.println("Tarefa removida com sucesso");
+        }
+
 
     }
 
@@ -115,7 +129,41 @@ public class ListaTarefas {
             }
         }
 
-        throw new RuntimeException("Tarefa não encontrada");
+        return null;
+    }
+
+    public void recuperarListaPorCategoria() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Insira a categoria: ");
+        String categoria = input.nextLine();
+        for(Tarefa tarefa : lista) {
+            if (tarefa.getCategoria().equals(categoria)) {
+                System.out.println(tarefa.getNome() + ", " +
+                        tarefa.getDescricao() + ", " +
+                        tarefa.getDataDeTermino() + ", " +
+                        tarefa.getPrioridade() + ", " +
+                        tarefa.getCategoria() + ", " +
+                        tarefa.getStatus());
+            }
+        }
+    }
+
+    public void recuperarListaPorPrioridade() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Insira o valor da prioridade: ");
+        int prioridade = Integer.parseInt(input.nextLine());
+        for (Tarefa tarefa : lista) {
+            if(tarefa.getPrioridade() >= prioridade) {
+                System.out.println(tarefa.getNome() + ", " +
+                        tarefa.getDescricao() + ", " +
+                        tarefa.getDataDeTermino() + ", " +
+                        tarefa.getPrioridade() + ", " +
+                        tarefa.getCategoria() + ", " +
+                        tarefa.getStatus());
+            }
+        }
     }
 
 

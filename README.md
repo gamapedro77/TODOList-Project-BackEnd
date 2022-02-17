@@ -4,7 +4,7 @@
 
 basta executar o arquivo Application.class que contém a main utilizando 
 
-`java src/out/Application`
+`java out/production/Back-End-ACZG/Application`
 
 ou executar utilizando alguma IDE
 

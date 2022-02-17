@@ -16,8 +16,8 @@ public class ListaTarefas {
     }
 
     public void carregarArquivo(String filePath) {
-        File file = new File(filePath);
         try {
+            File file = new File(filePath);
             Scanner sc = new Scanner(file);
             while(sc.hasNextLine()) {
                 String[] line = sc.nextLine().split(",");
@@ -31,7 +31,7 @@ public class ListaTarefas {
                 this.lista.add(tarefa);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Nenhum arquivo de lista foi encontrado... Iniciando lista vazia.");
         }
 
     }

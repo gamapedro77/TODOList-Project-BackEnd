@@ -37,27 +37,7 @@ public class ListaTarefas {
 
     }
 
-    public void novaTarefa() {
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Insira o nome da tarefa: ");
-        String nome = input.nextLine();
-        System.out.println("Insira a descricao da tarefa: ");
-        String descricao = input.nextLine();
-        System.out.println("Insira um numero de 1 à 5 para a prioridade da tarefa: ");
-        int prioridade = Integer.parseInt(input.nextLine());
-        System.out.println("Insira a categoria da tarefa: ");
-        String categoria = input.nextLine();
-        System.out.println("Insira o status da tarefa: ");
-        String status = input.nextLine();
-        System.out.println("Insira a data limite da tarefa: ");
-        String data = input.nextLine();
-        Tarefa novaTarefa = new Tarefa(nome,
-                descricao,
-                data,
-                prioridade,
-                categoria,
-                status);
+    public void novaTarefa(Tarefa novaTarefa) {
 
         this.lista.add(novaTarefa);
         this.ordenarPorPrioridade();

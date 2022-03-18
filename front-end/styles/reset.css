@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Renogare;
+  src: url("../public/Renogare-Regular.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Renogare;
+}
+
+html {
+  min-height: 100vh;
+  min-width: 100vw;
+}

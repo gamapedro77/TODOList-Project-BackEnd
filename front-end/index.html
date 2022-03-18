@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
+
+    <script src="./scripts/index.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <div class="flex-container-row">
+            <button onClick="onClickNovaTarefa()" class="nova-tarefa-botao">Nova Tarefa</button>
+            <div class="flex-container">
+                <h1>TODO LIST</h1>
+                <div class="lista-container">
+                    <ul class="lista-tarefas">
+                        <li class="tarefa" id=0>
+                            <div>
+                                <h3>Nome Tarefa</h3>
+                                <details>                                
+                                    <summary>Detalhes</summary>
+                                </details>
+                            </div>
+                            <div>
+                                <button>Deletar</button>
+                                <button>Editar</button>
+                            </div>
+                            <div>
+                                <h3 class="dia">02</h4>
+                                <h3 class="mes">05</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="form-container-popup">
+        <h2>Nova Tarefa</h2>
+        <form>
+            <label for="nome-tarefa">Nome
+                <input type="text" id="nome-tarefa">
+            </label>
+            <label for="descricao-tarefa">Descrição
+                <input type="text" id="categoria-tarefa">
+            </label>
+            <label for="categoria-tarefa">Categoria
+                <input type="text" id="descricao-tarefa">
+            </label>
+            <label for="data-tarefa">Data
+                <input type="date" id="data-tarefa">
+            </label>
+            <label for="prioridade-tarefa">Prioridade
+                <input type="range" min="1" max="5" step="1"id="prioridade-tarefa">
+            </label>
+        </form>
+        <button onClick="onClickCriarTarefa()"class="nova-tarefa-botao" id="criar">Criar</button>
+    </div>
+</body>
+</html>

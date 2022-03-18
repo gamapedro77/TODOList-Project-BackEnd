@@ -1,0 +1,140 @@
+body {
+  background-color: #e8b6ff;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+h1 {
+  color: #bbf6ff;
+}
+
+#main {
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+.lista-container {
+  background-color: #ffb6f8;
+  min-width: 80vw;
+  border-radius: 16px;
+  border: solid 1px black;
+  list-style: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 4vh;
+}
+
+.lista-tarefas {
+  min-width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-container {
+  margin: 12vh 0 0 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nova-tarefa-botao {
+  font-family: "Renogare";
+  color: white;
+  width: 120px;
+  height: 65px;
+  border-radius: 8px;
+  border: solid 2px #bbf6ff;
+  margin-bottom: 14vh;
+  background-color: #bff4fc;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+}
+
+.flex-container-row {
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0% 2%;
+}
+
+.tarefa {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#main.active {
+  filter: blur(10px);
+  pointer-events: none;
+  user-select: none;
+}
+
+#form-container-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  padding: 32px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  background: white;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+form > label {
+  margin: 5% 0 0 0;
+  font-size: 20px;
+  width: 100%;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #bbf6ff;
+  width: 100%;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+#form-container-popup.active {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#criar {
+  margin-top: 24px;
+}
+
+.tarefa {
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+  padding: 20px 16px;
+}

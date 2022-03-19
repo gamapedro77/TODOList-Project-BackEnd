@@ -138,3 +138,20 @@ input[type="text"]:focus {
   justify-content: space-between;
   padding: 20px 16px;
 }
+
+.container-botao {
+  display: flex;
+  flex-direction: column;
+}
+
+.botao-tarefa {
+  margin: 8px;
+  background-color: #bff4fc;
+  border: solid 2px #bbf6ff;
+
+  cursor: pointer;
+
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}

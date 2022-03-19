@@ -51,10 +51,19 @@ function onClickCriarTarefa() {
   const containerBotoes = document.createElement("div");
   const buttonDeletar = document.createElement("button");
   buttonDeletar.innerText = "Deletar";
-  buttonDeletar.setAttribute("onClick", "onClickDeletarTarefa()");
   containerBotoes.appendChild(buttonDeletar);
+  buttonDeletar.setAttribute(
+    "onclick",
+    `onClickDeletarTarefa(${tarefas.length - 1})`
+  );
+
   const buttonEditar = document.createElement("button");
   buttonEditar.innerText = "Editar";
+
+  buttonEditar.setAttribute(
+    "onclick",
+    `onClickEditarTarefa(${tarefas.length - 1})`
+  );
   containerBotoes.appendChild(buttonEditar);
 
   listItem.appendChild(containerBotoes);
@@ -81,4 +90,12 @@ function onClickCriarTarefa() {
 
   const popup = document.getElementById("form-container-popup");
   popup.classList.toggle("active");
+}
+
+function onClickDeletarTarefa(id) {
+  console.log(id);
+
+  const elementToDelete = document.getElementById(id);
+  elementToDelete.remove();
+  console.log(elementToDelete);
 }

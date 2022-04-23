@@ -1,5 +1,7 @@
 # TODOList-Project-BackEnd
 
+Aluno: Pedro Gama
+
 ## Como rodar
 
 Apartir da atualização mais recente a aplicação agora possui gradle build tool para auxiliar no projeto

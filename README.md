@@ -2,16 +2,35 @@
 
 ## Como rodar
 
-    Apartir da atualização mais recente a aplicação agora possui gradle build tool para auxiliar no projeto
+Apartir da atualização mais recente a aplicação agora possui gradle build tool para auxiliar no projeto
 
-    Compilando projeto:
-        `gradle compileJava`
+### Linux
 
-    Executando projeto:
-        `gradle run`
+Compilando projeto:
 
-    Executando testes unitarios:
-        `gradle test`
+`./gradlew compileJava`
+
+Executando projeto:
+
+`./gradlew run`
+
+Executando testes unitarios:
+
+`./gradlew test`
+
+### Windows
+
+Compilando projeto:
+
+`./gradlew.bat compileJava`
+
+Executando projeto:
+
+`./gradlew.bat run`
+
+Executando testes unitarios:
+
+`./gradlew.bat test`
 
 ## Como funciona
 

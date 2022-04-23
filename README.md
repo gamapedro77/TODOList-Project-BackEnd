@@ -2,11 +2,16 @@
 
 ## Como rodar
 
-basta executar o arquivo Application.class que contém a main utilizando 
+    Apartir da atualização mais recente a aplicação agora possui gradle build tool para auxiliar no projeto
 
-`java out/production/Back-End-ACZG/Application`
+    Compilando projeto:
+        `gradle compileJava`
 
-ou executar utilizando alguma IDE
+    Executando projeto:
+        `gradle run`
+
+    Executando testes unitarios:
+        `gradle test`
 
 ## Como funciona
 
